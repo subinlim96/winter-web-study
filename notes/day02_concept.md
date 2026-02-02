@@ -23,3 +23,58 @@
    ex)
    numberArr.splice(2, 1); // (3) ["zero", "one", "three"]
    
+- 배열의 length 프로퍼티
+1. 요소의 개수가 아니라 가장 큰 인덱스에 1을 더한 값이다. (자동 갱신)
+2. 배열을 자를 수 있다.(단, 복구 불가능)
+   ex)
+   let arr = [1, 2, 3, 4, 5]
+
+   arr.length = 2; alert(arr); // [1, 2]
+   arr.length = 5; alert(arr[3]); // undefined
+
+- 정렬
+1. 순차적 - arr.sort();
+2. 역순적 - arr.reverse();
+
+- 배열 여부 확인
+0. typeof(타입 확인하는 연산자) 사용 시, object라고 나옴.
+1. Array.isArray() 메소드
+   ex)
+   document.write(Array.isArray(arr)); // true
+2. instanceof 연산자
+   ex)
+   document.srite(arr instanceof Array); // true
+
+-다차원 배열
+1. 탐색 속도 느려짐
+2. 대량의 데이터 처리 불리 -> 3차원 이상의 배열은 거의 사용하지 X
+3. 생성
+   ex) const twoDimensionalArray = [ // 2차원
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+       ];
+4. 접근
+   ex) const value = twoDimensionalArray[0][1];
+5. 추가 (push)
+   ex) animals.push(["코끼리", 4]);
+6. 제거 (pop, shift, splice)
+   ex) animals.pop(); // 맨 끝
+       animals.shift(); // 맨 앞
+       animals.splice(2,2); // [2]부터 2개 삭제
+
+- 희소 배열
+1. 요소의 위치가 연속적이지 않은 배열
+2. 칸은 많은데 필요한 칸은 현저히 적을 때 사용!
+
+- 자료구조
+1. 큐: 가장 먼저 들어온 요소가 가장 먼저 나가는 자료구조(선입선출) -> shift, push 사용
+2. 스택: 마지막에 들어온 요소가 가장 먼저 나가는 자료구조(후입선출) -> pop, push 사용
+
+- 문자열 배열
+1. 문자열은 배열처럼 보이지만, 배열은 아니다! (읽기 전용임. 수정 불가)
+   ex) var str = "안녕하세요!";
+       str[0] = ""; // 오류 발생
+2. 그 대신 Array.prototype.split() 메소드를 사용해서 배열로 변환하면 배열로서 사용이 가능하다.
+
+-
