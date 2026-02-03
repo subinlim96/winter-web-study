@@ -94,3 +94,26 @@
                           length: 3
                         } // 그냥 객체!
 <img width="390" height="290" alt="image" src="https://github.com/user-attachments/assets/208b5a4d-2a7f-4005-802f-b099e62ace6b" />
+
+-forEach
+1. function 이용
+   ex)
+   numbers.forEach(function(number) { // number = 매개변수
+      console.log(number); // 실행 코드
+   });
+2. =>(화살표) 이용
+   ex)
+   numbers.forEach(number => console.log(number)); // 좀 더 단순함.
+   numbers.forEach((number, index) => {
+      console.log('Index: ' + index + ' Value: ' + number);
+   }); // +를 이용해서 출력 형태 수정
+
+-map 
+1. 배열의 각 요소에 주어진 콜백 함수를 적용해 새로운 배열을 반환함.
+
+*콜백 함수: 전달인자로 다른 함수에 전달되는 함수.(reduce, forEach 안에 들어가는 함수)
+*동기/비동기: 순차적으로 진행되는 작업(동시 X)/독립적으로 실행되는 작업(동시 O) -> 각 함수 자체에 정해져 있음.
+
+-filter
+-reduce
+-구조분해할당
