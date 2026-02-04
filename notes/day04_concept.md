@@ -49,7 +49,48 @@
      .then(num => {
        console.log(num); // 3
      });
+     
 -async / await
-1. Promise를 사람이 읽기 쉽게 쓴 문법
-2. await
+1. Promise를 사람이 읽기 쉽게 쓴 문법(Promise는 then을 사용해서 짧은 코드에 용의/async, await는 긴 코드, 에러 처리 깔끔을 위할 때 용의)
+2. await: Promise가 끝난 후 resolve된 값을 꺼내는 것.(= Promise를 값처럼 만)
    let result = await addOne(1); // Promise가 끝날 때까지 여기서 잠깐 기다렸다가 resolve된 값을 result에 넣어준다.
+3. async: 이 함수는 항상 Promise를 반환한다.
+   ex)
+   async function run() {
+      return 10;
+   } -> 10을 반환하는 것처럼 보이지만 실제로는 return Promise.resolve(10);(10을 반환하기로한 약속)을 반환하는 것
+4. await는 async 함수 안에서만 사용 가능
+   ex) await run(); (X)
+   **async** function test() {
+      **await** run();
+   } (O)
+ex)
+async function run() {
+  const a = await addOne(1);
+  const b = await addOne(a);
+  console.log(b);
+}
+run(); // 모든 조건을 만족하는 코드
+
+-then vs await
+then)
+addOne(1).then(result => {
+  console.log(result);
+});
+await) -> **more easier**
+const result = await addOne(1);
+console.log(result);
+
+-try ... catch문
+1. 예외 발생 상황 지정
+2. 기본 구조
+   - try 안에는 기본적으로 실행할 문장이 들어감
+   - catch 안에는 예외 상황 발생 시 실행할 문장이 들어감.
+   ex)
+   try {
+      정의되지 않은 문장; // 여기서 에러가 발생함 -> catch로 이
+      alert('문제없이 실행됐습니다.');
+   } catch (err) {
+      alert('무시된 블럭입니다.');
+   }
+3. finally: 항상 실행될 코드를 받는 블록.(선택)
