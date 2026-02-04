@@ -121,6 +121,7 @@
 4. function (element)/(element, index)/(element, index, array) { }
 
 *콜백 함수: 전달인자로 다른 함수에 전달되는 함수.(reduce, forEach 안에 들어가는 함수)
+
 *동기/비동기: 순차적으로 진행되는 작업(동시 X)/독립적으로 실행되는 작업(동시 O) -> 각 함수 자체에 정해져 있음.
 
 -filter
@@ -133,7 +134,8 @@
 2. 배열의 값을 하나의 값으로 축약한다.
    ex)
    const sum1 = student.reduce(function(acc, cur) {return acc + cur.score;}, 0);
-   // 모든 요소의 합을 구하는 코드이다.
+   // 모든 요소의 합을 구하는 코드이다.\
+
 -구조분해할당
 1. 배열이나 객체의 속성을 해체하여 개별 변수에 담을 수 있게 하는 표현
    ex)
