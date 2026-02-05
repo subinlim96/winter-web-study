@@ -65,3 +65,5 @@ import **bar** from "./userService.js";
 ex)
 const a = 10;
 export default a; // export default const a = 10; (X)
+
+*fetch는 async/await보다 늦게 실행된다.
