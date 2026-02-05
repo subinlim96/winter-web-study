@@ -91,3 +91,59 @@ async function newAPI() {
 }
 
 newAPI();
+
+// 원하는 순서로 출력하는 법
+// 문자열로 직접 출력
+fetch('https://api.weatherapi.com/v1/current.json?key=f93c607bbca14a9f989105010260502&q=Busan&lang=ko')
+.then(response => response.json())
+.then(data => {console.log(
+  `place: ${data.location.name}\n` +
+  `time: ${data.current.time}\n` +
+  `temperature: ${data.current.temp_c}\n` +
+  `cloudy: ${data.current.cloud}`
+);
+
+            })
+.catch(err => console.error(err));
+
+// 배열로 감싸기
+async function newAPI1() {
+    try {
+        const response = await fetch('https://api.weatherapi.com/v1/current.json?key=f93c607bbca14a9f989105010260502&q=Jinju&lang=ko');
+        const data = await response.json();
+
+        const orderedResult = [
+  { label: "place", value: data.location.name },
+  { label: "time", value: data.current.time },
+  { label: "temperature", value: data.current.temp_c },
+  { label: "cloudy", value: data.current.cloud }
+        ];
+
+    console.log(orderedResult);
+
+    } catch(error) {
+        console.error('Error:', error);
+    }
+}
+
+newAPI1();
+
+//Object.entries + 내가 정한 순서 -> 좀 별로인듯;;
+async function newAPI2() {
+    try {
+        const response = await fetch('https://api.weatherapi.com/v1/current.json?key=f93c607bbca14a9f989105010260502&q=Jinju&lang=ko');
+        const data = await response.json();
+
+        const order = ㅂ["place", "time", "temperature", "cloudy"];
+
+order.forEach(key => {
+  console.log(key, data[key]);
+});
+
+
+    } catch(error) {
+        console.error('Error:', error);
+    }
+}
+
+newAPI2();
