@@ -134,7 +134,7 @@ async function newAPI2() {
         const response = await fetch('https://api.weatherapi.com/v1/current.json?key=f93c607bbca14a9f989105010260502&q=Jinju&lang=ko');
         const data = await response.json();
 
-        const order = ㅂ["place", "time", "temperature", "cloudy"];
+        const order = ["place", "time", "temperature", "cloudy"];
 
 order.forEach(key => {
   console.log(key, data[key]);
