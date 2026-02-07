@@ -1,21 +1,22 @@
 <배열>
--생성(1번 외에는 거의 안 씀)
+
+- 생성(1번 외에는 거의 안 씀)
 1. const a = [];
 2. const b = Array(원소들);
 3. const c = new Array(원소들);
 4. const d = nwe Array(배열 크기);
 
--접근
+- 접근
 1. var element == arr[0]; 첫 번째 요소 대입
 2. arr[1] = 10; 배열 길이 늘어남.
 3. arr[2] = element; 대입 + 배열 길이 증가
 
--요소의 추가
+- 요소의 추가
 1. arr[특정인덱스] = 추가할 요소;
 2. arr.push(추가할 요소);
 3. arr[arr.length] = 추가할 요소; 순차적으로 추가함.(가장 빠름)
 
--요소의 삭제
+- 요소의 삭제
 1. delete 사용 시, 문자열의 길이는 변하지 않는다.
    ex)
    delete numberArr[2]; // ["zero", "one", empty, "three"]
@@ -45,7 +46,7 @@
    ex)
    document.srite(arr instanceof Array); // true
 
--다차원 배열
+- 다차원 배열
 1. 탐색 속도 느려짐
 2. 대량의 데이터 처리 불리 -> 3차원 이상의 배열은 거의 사용하지 X
 3. 생성
@@ -108,7 +109,7 @@
       console.log('Index: ' + index + ' Value: ' + number);
    }); // +를 이용해서 출력 형태 수정
 
--map(변환)
+- map(변환)
 1. 배열의 각 요소에 주어진 콜백 함수를 적용해 새로운 배열을 반환함.
    ex)
    const numbers = **[1, 2, 3, 4, 5]**
@@ -124,19 +125,19 @@
 
 *동기/비동기: 순차적으로 진행되는 작업(동시 X)/독립적으로 실행되는 작업(동시 O) -> 각 함수 자체에 정해져 있음.
 
--filter
+- filter
 1. 콜백 함수를 사용하여 배열의 요소를 필터링한다.
 2. 조건에 맞는 요소들로만 구성된 새로운 배열을 만든다.
 3. 다른 메소드들과 콜백함수 사용 형태가 동일하다.
 
--reduce(누적)
+- reduce(누적)
 1. 매개변수가 2개 이상이어야 함.
 2. 배열의 값을 하나의 값으로 축약한다.
    ex)
    const sum1 = student.reduce(function(acc, cur) {return acc + cur.score;}, 0);
    // 모든 요소의 합을 구하는 코드이다.\
 
--구조분해할당
+- 구조분해할당
 1. 배열이나 객체의 속성을 해체하여 개별 변수에 담을 수 있게 하는 표현
    ex)
    let arr =["Bora", "Lee"]
