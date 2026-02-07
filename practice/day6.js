@@ -34,7 +34,8 @@ function showMenu() { // 비동기 코드와 while을 쓰고 싶다면
             console.log('추가할 학생의 정보를 입력해주세요.');
             rl.question('이름 > ', (name) => {
                 rl.question('점수 > ', (grade) => {
-                    students.push([name, grade]);
+                    students.splice(students.length, 0, 
+                        {이름: name, 점수: grade});
                     console.log(students); // 일단 키 없이, 2차원 배열로 만들어보기
                     showMenu();
                 });
@@ -46,29 +47,52 @@ function showMenu() { // 비동기 코드와 while을 쓰고 싶다면
         // 점수 > ~~~~(동명이인을 고려할 시)
             console.log('삭제할 학생의 정보를 입력해주세요.');
             rl.question('이름 > ', (name) => {
-                rl.question('점수 > ', (grade) => {
-                    students.pop();
-                    
-                    console.log(students);
-                    showMenu();
-                });
+                students.forEach((item, index) => {
+                    if (item.이름 == name)
+                        students.splice(index, 1);
+                })                
+                console.log(students);
+                showMenu();
             });
             break;
         case 3: // 평균 점수 보기
-        // 현재 평균 점수입니다. > ~~~~
-        var sum1 = 0;
-        for (var i = 0; i < students.length; i++) {
-            sum1 += parseInt(students[i][1], 10);
-        }
-        console.log('현재 평균 점수는', sum1 / students.length, '점입니다.');
-        showMenu();
+        // 현재 평균 점수 ~~~ 점입니다.
+            var sum1 = 0;
+            for (var i of students) {
+                sum1 += parseInt(i.점수, 10);
+            }
+            async function ave() {
+                console.log('현재 평균 점수는', sum1 / students.length, '점입니다.');
+            }
+            ave();
+            showMenu();
+            break;
+            // console.log('현재 평균 점수는', sum1 / students.length, '점입니다.');
+            // showMenu();
         case 4: // 최고점 학생 보기
-        // 현재 가장 높은 점수를 가진 학생입니다. > ~~~~
+        // 현재 최고 점수 ~~~ 점입니다.~
+            var max = 0;
+            for (var i of students) {
+                if (i.점수 > max)
+                    max = parseInt(i.점수, 10);
+            }
+            async function maxi() {
+                console.log('현재 최고 점수는', max, '점입니다.');
+            }
+            maxi();
+            showMenu();
+            break;
         case 5: // JSON으로 저장
+            var jsonchan = JSON.stringify(students);
+            console.log(jsonchan);
+            showMenu();
+            break;
         }
     });
 };
 // 가능하면 수정하는 것도 만들기
+// + 입력 칸에 올바르지 않은 형식의 입력을 넣었을 때 되돌아가는
+// 기능도 넣기
 
 showMenu();
 
