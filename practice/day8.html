@@ -8,8 +8,16 @@
     <script src="day8.js"></script>
 </head>
 <body>
-    <h2>수빈이의 to do 리스트</h2>
-    <input type="text" placeholder="할 일을 입력하세요" id="title">
-    <button>추가</button>
+    <div id="title">
+        <h2>수빈이의 to do 리스트</h2>
+    </div>
+    <hr><br>
+    <div id="input">
+        <input type="text" placeholder="할 일을 입력하세요"
+        id="input">
+        <button onclick="addline()">추가</button>
+    </div>
+    <br><br>
+    <div id="list"></div>
 </body>
 </html>
