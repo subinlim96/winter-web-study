@@ -7,5 +7,9 @@ function keyCodeCheck() {
         newLi.appendChild(newBtn); // li안에 button 담기
         newLi.appendChild(newSpan); // li안에 span 담기
         console.log(newLi);
+
+        const todoInput = document.querySelector('#todoInput');
+
+        newSpan.textContent = todoInput.value; // span 안에 value값 담기
     }
 }
