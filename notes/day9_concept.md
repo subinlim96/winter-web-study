@@ -1,8 +1,8 @@
 [CSS]
 - 'flexbox'(display: flex): 뷰 포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를
-    배치, 정렬, 분산 가능
+    배치, 정렬, 분산 가능(1차원 정렬)
   ex) .flex_container {
-        display: flex // 정렬 담당 부모가 됨.
+        display: flex // 정렬 담당 부모가 됨. (가로로 정렬함)
       }
   1. 자식 요소 flex item / 상위 부모 요소 flex container
     <img width="500" height="225" alt="image" src="https://github.com/user-attachments/assets/d920750b-34ea-4705-9892-53e25f12c30f" />
@@ -16,7 +16,14 @@
 - 'align-items' (세로 방향 정렬)
   (주축 반대 방향 정렬)1. flex-start: up 2. center: 가운데 3. flex-end: down
 
-- 'gap'
+- 'gap': 요소들 사이의 간격을 자동으로 벌려주는 것
+    ex) gap: 20px;
 
+- 'grid': 표처럼 가로 + 세로를 동시에 정렬하는 도구(flex와 차이를 가짐, 2차원 정렬)
+  ex) .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; // 1fr = 같은 비율로 나
+      }
+  // 1   2   3
+     4   5   6
 
-- 'grid'
