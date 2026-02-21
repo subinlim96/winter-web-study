@@ -15,10 +15,35 @@
 - 브라우저 DOM 문법
 1. document.**getElementById**("id명"): 해당 id명을 가진 요소 하나를 반환
 2. document.**querySelector**("선택자"): 해당 선택자를 만족하는 요소 하나를 반환
-3. document.**getElementByCalssName**("class명"): 해당 class명을 가진 모든 요소들을 배열에 담아 인덱스에 맞는 요소를 반
+3. document.**getElementByCalssName**("class명"): 해당 class명을 가진 모든 요소들을 배열에 담아 인덱스에 맞는 요소를 반환(실시간 유사배열이라 중간에 원소를 빼거나 하면 길이가 줄어듬. 그래서 일반적인 반복문이 적용되지 못 할 수 있다.)
 4. document.**getElementsByTagName**("태그명"): 해당 태그명을 가진 모든 요소들을 배열에 담아 인덱스에 맞는 요소를 반환
 5. document.**querySelectorAll**("선택자명"): 해당 선택자를 만족하는 모든 요소들을 배열에 인덱스에 맞는 요소를 반환
 
+- HTML 선택쿼리문
+1. document.anchors: name 속성을 가지는 <a>요소를 모두 반환함.
+2. document.applets: applet 요소를 모두 반환함. (HTML5에서 제외됨)
+3. document.body: <body>요소를 반환함.
+4. document.cookie: HTML 문서의 쿠키(cookie)를 반환함.
+5. document.domain: HTML 문서가 위치한 서버의 도메인 네임(domain name)을 반환함.
+6. document.forms: <form>요소를 모두 반환함.
+7. document.images: <img>요소를 모두 반환함.
+8. document.links: href 속성을 가지는 <area>요소와 <a>요소를 모두 반환함.
+9. document.referrer: 링크(linking)되어 있는 문서의 URI를 반환함.
+10. document.title: <title>요소를 반환함.
+11. document.URL: HTML 문서의 완전한 URL 주소를 반환함.
+12. document.baseURI: HTML 문서의 절대 URI(absolute base URI)를 반환함.
+13. document.doctype: HTML 문서의 문서 타입(doctype)을 반환함.
+14. document.documentElement: <html>요소를 반환함.
+15. document.documentMode: 웹 브라우저가 사용하고 있는 모드를 반환함.
+16. document.documentURI: HTML 문서의 URI를 반환함.
+17. document.embeds: <embed>요소를 모두 반환함.
+18. document.head: <head>요소를 반환함.
+19. document.implementation: HTML DOM 구현(implementation)을 반환함.
+20. document.inputEncoding: HTML 문서의 문자 인코딩(character set) 형식을 반환함.
+21. document.lastModified: HTML 문서의 마지막 갱신 날짜 및 시간을 반환함
+22. document.readyState: HTML 문서의 로딩 상태(loading status)를 반환함.
+23. document.scripts: <script>요소를 모두 반환함.
+24. document.strictErrorChecking: 오류의 강제 검사 여부를 반환함.
 
 - DOM의 탐색 방법
   1. 자식요소 탐색
@@ -31,7 +56,7 @@
       ex) const prevEl = box2.previousElementSibling; // box2의 바로 이전에 있는 형제요소를 넣어라
           const nextEl = box2.nextElementSibling; // box2의 바로 다음에 있는 형제요소를 넣어라
   4. 부모요소 탐색
-    - 현재요소.parentElemnet: 현재 요소의 바로 부모를 찾음
+    - 현재요소.parentElemnet: 현재 요소의 바로 부모를 찾음(parentNode도 비슷하게 실행되고 텍스트 노드 포함함.)
     - 현재요소.closet(): 현재 요소에서 시작해서 위로 올라가면서 괄호 안에 있는 것을 찾음.
   
 *`<section>` vs `<article>`
@@ -43,3 +68,8 @@
   (무조건 section이 aticle을 감싸는 건 아님, 반대도 가능)
 
 *href="#" : 페이지 맨 위로 이동이라는 의미.
+*target 값 종류
+- _self: 현재 탭(기본)
+- _blank: 새 탭
+- _parent
+- _top
