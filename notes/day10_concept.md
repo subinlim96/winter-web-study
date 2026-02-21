@@ -5,7 +5,7 @@
 
 - DOM의 탐색 방법
   1. 자식요소 탐색
-    - 부모요소.querySelector() // 괄호 안에 있는 선택자를 넣어라(id -> #으로 시작, class -> .으로 시작)
+    - 부모요소.querySelector() // 부모요소 안에서 괄호 안에 있는 선택자를 넣어라(id -> #으로 시작, class -> .으로 시작, 태그 -> 그냥 시작)
     - 부모요소.children(유사배열로 출력) *유사배열 : 배열처럼 보이지만 배열은 아닌 그룹요소
       -> 자식요소를 넣어라
   2. 형제요소 탐색
@@ -14,8 +14,8 @@
       ex) const prevEl = box2.previousElementSibling; // box2의 바로 이전에 있는 형제요소를 넣어라
           const nextEl = box2.nextElementSibling; // box2의 바로 다음에 있는 형제요소를 넣어라
   4. 부모요소 탐색
-    - 현재요소.parentElemnet;
-    - 현재요소.closet()
+    - 현재요소.parentElemnet: 현재 요소의 바로 부모를 찾음
+    - 현재요소.closet(): 현재 요소에서 시작해서 위로 올라가면서 괄호 안에 있는 것을 찾음.
   
 *`<section>` vs `<article>`
 - section: 주제별로 구분한 그룹, 영역을 감싸거나 구분할 때 사용
@@ -24,3 +24,5 @@
   <img width="444" height="279" alt="image" src="https://github.com/user-attachments/assets/df6cc311-6805-451e-94f7-7f44e0d8e9ae" />
 
   (무조건 section이 aticle을 감싸는 건 아님, 반대도 가능)
+
+*href="#" : 페이지 맨 위로 이동이라는 의미.
