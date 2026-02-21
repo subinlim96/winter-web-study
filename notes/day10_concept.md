@@ -4,7 +4,21 @@
     자바스크립트 같은 스크립팅 언어가 쉽게 웹 페이지에 접근하여 조작할 수 있게끔 연결시켜 주는 역할을 담당함.
 
 - 브라우저 DOM의 종류
-  1. Document Node: 트리의 최상위에 존재. 요소, 어트리뷰트, 텍스트 노드에 접근하기 용
+1. Document Node(문서 노드): 트리의 최상위에 존재. 요소, 어트리뷰트, 텍스트 노드에 접근하기 용이
+2. Element Node(요소노드): getElementById()는 괄호 안의 태그를 찾는 함수.
+  (<div id="box">안녕</div> div(태그): 요소 노드, id: 속성, 안녕: 텍스트 노드)
+3. Attribute Node(어트리뷰트 노드): 속성 표현
+4. TExt Node(텍스트 노드): 텍스트 표현
+<img width="883" height="430" alt="image" src="https://github.com/user-attachments/assets/770a37e3-62c1-402d-8d92-bc75901e7ecd" />
+
+
+- 브라우저 DOM 문법
+1. document.**getElementById**("id명"): 해당 id명을 가진 요소 하나를 반환
+2. document.**querySelector**("선택자"): 해당 선택자를 만족하는 요소 하나를 반환
+3. document.**getElementByCalssName**("class명"): 해당 class명을 가진 모든 요소들을 배열에 담아 인덱스에 맞는 요소를 반
+4. document.**getElementsByTagName**("태그명"): 해당 태그명을 가진 모든 요소들을 배열에 담아 인덱스에 맞는 요소를 반환
+5. document.**querySelectorAll**("선택자명"): 해당 선택자를 만족하는 모든 요소들을 배열에 인덱스에 맞는 요소를 반환
+
 
 - DOM의 탐색 방법
   1. 자식요소 탐색
