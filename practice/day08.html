@@ -6,7 +6,7 @@
     <title>수빈이의 to do 리스트</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 모바일 브라우저에서 css의 깨짐 현상을 막아준다 -->
-    <script src="day8.js"></script>
+    <script src="day08.js" defer></script>
 </head>
 <body>
     <div id="title">
@@ -14,15 +14,12 @@
     </div>
     <hr><br>
     <div id="input">
-        <input type="text" placeholder="할 일을 입력하세요"
-        id="inputbar">
-        <button id="button" onclick="addline()">추가</button>
+        <input type="text" placeholder="할 일을 입력하세요" id="inputbar">
+        <button id="button">추가</button>
     </div>
     <br><br>
-    <div id="list">
-        <link rel="stylesheet" href="day8.css">
-        <script type="text/javascript" src="day8.js"></script>
-    </div>
-    
+    <link rel="stylesheet" href="day08.css">
+
+    <div id="list"></div>
 </body>
 </html>
