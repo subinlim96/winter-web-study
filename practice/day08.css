@@ -5,7 +5,21 @@
     display: flex;
     flex-direction: column;
 }
-
+.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.style {
+    transform: scale(0.80);
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;   /* 글자 1개 정도 간격 */
+}
+.style1 {
+    transform: scale(0.80);
+}
 
 /* {
     display: flex;
