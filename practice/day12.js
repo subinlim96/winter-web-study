@@ -24,11 +24,40 @@ const personObj = JSON.parse(personString);
 const numsArr = JSON.parse(numsString);
 // JSON 문자열을 객체 배열로 변환
 
-document.body.textContent = personString + numsString + '\n\n';
+document.body.innerHTML = personString + '<br>' + numsString;
 // document.write(personStrinig); 대신 사용하는 현대 방법
 
+document.body.innerHTML += '<br>'
 for (let i = 0; i < window.localStorage.length; i++) {
     const key = window.localStorage.key(i);
     const value = window.localStorage.getItem(key);
-    document.body.textContent += value + '<pre>';
-}// 줄 바꿈 해야함.
+    document.body.innerHTML += value + "<br>";
+} // name, age, person, nums의 값이 모두 출력됨.
+// innerHTML는 HTML으로 해석하는 것이고 -> 줄바꿈은 이걸로 사용
+// textContent는 그냥 글자 그대로 해석하는 것이다.
+document.body.innerHTML += "<br/>";
+
+window.localStorage.clear(); // setItem
+window.localStorage.setItem('name', 'anna');
+window.localStorage.setItem('age', 20);
+
+
+for (const key in window.localStorage) {
+    if(window.localStorage.hasOwnProperty(key)) {
+        const value = window.localStorage.getItem(key);
+        document.body.innerHTML += key + " : " + value + "<br/>";
+    }
+}
+document.body.innerHTML += "<br/>";
+// window.localStorage.hasOwnProperty(key)
+// 는 객체가 직접 가지고 있는 속성인지 확인하는 함수.
+
+const keys = Object.keys(window.localStorage);
+
+for(const key of keys) {
+    // value 찾기
+    const value = window.localStorage.getItem(key);
+    // 결과 출력
+    document.body.innerHTML += key + " : " + value + "<br/>"
+}
+document.body.innerHTML += "<br/>";

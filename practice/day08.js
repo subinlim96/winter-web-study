@@ -31,7 +31,6 @@ btn.addEventListener("click", () => {
             e.target.parentElement.remove();
         } // e.target = 사용자가 실제로 클릭한 요소
     });
-    console.dir(dele);
     checkbox.type = "checkbox"; // 체크박스를 만드는 코드
     span.textContent = text; // textContent를 사용하면 글을 넣을 수 있음
     // console.dir(checkbox.checked);
@@ -46,6 +45,11 @@ btn.addEventListener("click", () => {
     li.appendChild(dele);
     li.appendChild(edit);
     list.appendChild(li);
+    const liString = JWSON.stringify(li);
+    window.localStorage.setItem('line', liString);
+    const lineString = window.localStorage.getItem('line');
+    const lineli = JSON.parse(lineString);
+    document.body.innerHTML = lineli;
     // 또는 list.append(li);
     input.value = "";
     input.focus();
