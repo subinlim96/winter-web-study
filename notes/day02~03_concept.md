@@ -96,14 +96,18 @@
                         } // 그냥 객체!
 <img width="390" height="290" alt="image" src="https://github.com/user-attachments/assets/208b5a4d-2a7f-4005-802f-b099e62ace6b" />
 
--forEach
+- forEach
 1. function 이용 (모든 배열의 요소를 순회하지만, 새로운 배열을 반환하진 않는다)
+
    ex)
+
    numbers.forEach(function(number) { // number = 매개변수
       console.log(number); // 실행 코드
    });
-2. =>(화살표) 이용
+3. =>(화살표) 이용
+
    ex)
+
    numbers.forEach(number => console.log(number)); // 좀 더 단순함.
    numbers.forEach((number, index) => {
       console.log('Index: ' + index + ' Value: ' + number);
